@@ -18,29 +18,53 @@
     }
 
     // Regular
-
+console.log('hello');
     // Interpolated
-
+console.log('I am a %s string', 'man'); //es5
+const gender = 'man'
+console.log(`hello i am a ${gender}`); //es6
     // Styled
-
+console.log('%c i am some great text', 'font-size:50px; background:purple; text-shadow:10px 10px 10px black')
     // warning!
-
+console.warn('OH NO');
     // Error :|
-
+console.error(' errrrrrror');
     // Info
-
+console.info('HELLLLO');
     // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'that is wrong!');
 
+// console.assert(1 === 2, "that is wrong");
     // clearing
-
+// console.clear();
     // Viewing DOM Elements
-
+    console.log(p);
+console.dir(p);
     // Grouping together
-
+dogs.forEach(dog => {
+  console.groupCollapsed(`${dog.name}`);
+  console.log(`This is ${dog.name}`);
+  console.log(`${dog.name} is ${dog.age} years old`);
+  console.groupEnd(`${dog.name}`)
+});
     // counting
-
+console.count('Steven');
+console.count('Steven');
+console.count('Steven');
+console.count('Bob');
+console.count('Steven');
+console.count('Steven');
     // timing
+console.time('fetching data');
+fetch('https://api.github.com/users/wesbos')
+.then(data => data.json())
+.then(data => {
+  console.timeEnd('fetching data');
+  console.log(data);
+})
 
+console.table(dogs);
   </script>
 </body>
 </html>
