@@ -201,15 +201,15 @@
       });
       console.log(seconds);
       
-      let secondsLeft = seconds; 
-      const hours = Math.floor(secondsLeft/ 3600); //converts the seconds to hours
-      secondsLeft = secondsLeft % 3600; //returns the left over seconds
+  let secondsLeft = seconds; 
+  const hours = Math.floor(secondsLeft/ 3600); //converts the seconds to hours
+  secondsLeft = secondsLeft % 3600; //returns the left over seconds
 
-      const mins = Math.floor(secondsLeft / 60); //takes the left over seconds and turns them into mins
-      secondsLeft = secondsLeft % 60; //returns left over seconds
+  const mins = Math.floor(secondsLeft / 60); //takes the left over seconds and turns them into mins
+  secondsLeft = secondsLeft % 60; //returns left over seconds
 
 
-      console.log(hours, mins, secondsLeft); //outputs a total time HH:MM:SS
+  console.log(hours, mins, secondsLeft); //outputs a total time HH:MM:SS
 
 </script>
 </body>
