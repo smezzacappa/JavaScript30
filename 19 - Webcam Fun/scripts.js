@@ -76,6 +76,7 @@ function greenScreen(pixels){
     document.querySelectorAll('.rgb input').forEach((input) =>{
         levels[input.name] = input.value;
     });
+    
     console.log(levels);
 
     for(i = 0; i < pixels.data.length; i = i + 4){
