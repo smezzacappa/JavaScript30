@@ -54,7 +54,26 @@
   </div>
 
 <script>
+  const nav = document.querySelector('#main'); //selects the nav
+  const topOfNav = nav.offsetTop; //offset the nav from the top
 
+
+  function fixNav() { //function to fix nav
+    console.log(topOfNav, window.scrollY);  //console logs position of the nav on the page
+    if(window.scrollY >= topOfNav){ 
+      document.body.style.paddingTop = nav.offsetHeight + 'px'; //adds padding to the top of the nav and offsets it by the hieght in pixels
+      document.body.classList.add('fixed-nav'); //adds a new class of fixed nav when scrolled to a certain point
+      
+    }
+    else{
+      document.body.style.paddingTop = 0; //removes class of fixed nav when scrolled the other direction
+      document.body.classList.remove('fixed-nav');
+      
+    }
+  }
+
+
+  window.addEventListener('scroll', fixNav);  //adds and eventlisten to the page of scroll and the function to fix to the nav to the top of the page
 </script>
 
 </body>
