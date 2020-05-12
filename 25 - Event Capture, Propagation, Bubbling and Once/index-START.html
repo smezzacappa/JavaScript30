@@ -38,13 +38,21 @@
   .three {
     background: coral;
   }
+  button{
+    background-color: white;
+    height: 20px;
+    width: 90px;
+    padding: 1em;
+    margin: 1em;
+   
+  }
 </style>
 
 <button></button>
 <script>
 const divs = document.querySelectorAll('div');
 const button = document.querySelector('button');
-
+button.innerHTML = "click me";
 function logText(e){
   console.log(this.classList.value);
   e.stopPropagation();//stop bubbling
@@ -61,7 +69,7 @@ button.addEventListener('click', () => {
   once: true
 } 
   )
-  
+
 </script>
 </body>
 </html>
