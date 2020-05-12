@@ -54,12 +54,14 @@ divs.forEach(div => div.addEventListener('click', logText, {
   capture: false, //run the function on the way down, not the way up
   once: true //will only allow the click once
 }));
+
 button.addEventListener('click', () => {
   console.log("button clicked, can't click it again")
 }, {
   once: true
 } 
   )
+  
 </script>
 </body>
 </html>
