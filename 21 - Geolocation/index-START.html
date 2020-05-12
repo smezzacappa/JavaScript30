@@ -59,6 +59,19 @@
     /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
   </style>
   <script>
+
+    const arrow = document.querySelector('.arrow'); //gets arrow
+    const speed = document.querySelector('.speed-value'); //gets speed
+
+    navigator.geolocation.watchPosition((data) => { //creates geotracker
+      console.log(data)
+      speed.textContent = data.coords.speed;
+      arrow.style.transform = `rotate(${data.coords.heading}deg)`; //rotates the amount from north
+    }, (err)=> {
+      console.err(err);
+      alert("Need to enable location"); //send an error message when the user doesn't enable location tracking
+    })
+  
   </script>
 </body>
 </html>
