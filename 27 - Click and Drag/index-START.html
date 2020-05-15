@@ -35,6 +35,44 @@
   </div>
 
 <script>
+
+const slider = document.querySelector('.items') //select all the items in the div
+let isDown = false; //flag variable - if clicking or not
+let startX; //starting x 
+let scrollLeft; //scrolling left 
+
+slider.addEventListener('mousedown', (e) => { //click function
+  isDown = true; //clicked down
+  slider.classList.add('active'); //adding css class to slider
+  startX = e.pageX - slider.offsetLeft; 
+  scrollLeft = slider.scrollLeft;
+ 
+});
+
+slider.addEventListener('mouseleave', () => { //mouse leaves the div function
+  isDown = false; //not clicked
+  slider.classList.remove('active'); //removes css class
+});
+
+slider.addEventListener('mouseup', () => { //mouse isn't clicked
+  isDown = false; //not clicked
+  slider.classList.remove('active'); //removes css class
+});
+
+slider.addEventListener('mousemove', (e) => { //mouse moves when clicked
+  if(!isDown) return; //stop function from running
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft; //gets the x value of the slider on the page
+  
+  const walk = (x - startX) * 3; // how far we've moved from initial click
+  
+  slider.scrollLeft = scrollLeft - walk;  //allows for seamless scrolling
+});
+
+
+
+
+
 </script>
 
   </body>
