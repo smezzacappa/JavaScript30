@@ -15,6 +15,28 @@
   </div>
 
 <script>
+const speed = document.querySelector('.speed');
+const bar = document.querySelector('.speed-bar');
+const video = document.querySelector('.flex');
+
+function speedChange(e){
+  // console.log(e);
+  const y = e.pageY - this.offsetTop; //constrains the values of the y to the speed bar
+  const percent =  y/this.offsetHeight; //creates a percentage 
+ 
+  const min = 0.1; //minimum of 0.1x
+  const max = 10; //max of 4x
+  const height = Math.round(percent * 100) + '%'; //creates a rounded percertage for the height in the speed bar
+  
+  const playbackRate = percent * (max - min) + min; //establishes the playback rate
+  bar.style.height = height; //adjusts the position in the speed bar
+  bar.textContent = playbackRate.toFixed(1) + 'x'; //adds the speed value to the speed bar 
+  
+  video.playbackRate = playbackRate; //enables to the speed bar to change the speed
+};
+
+speed.addEventListener('mousedown', speedChange) //speedChange works on click
+
 </script>
 </body>
 </html>
