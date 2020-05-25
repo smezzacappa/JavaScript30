@@ -43,18 +43,18 @@ function displayEndTime(timestamp) {
 }
 
 function startTimer() {
-
+    
     const seconds = parseInt(this.dataset.time);
     timer(seconds);
     console.log(this.dataset.time)
 
 }
-function startUpTimer(){
+// function startUpTimer(){
 
     // const seconds = parseInt(this.dataset.time);
-    timer(countdown);
+    // timer(countdown);
     // console.log(this.dataset.time)
-}
+// }
 
 function pauseTime() {
     console.log('pressed');
@@ -81,6 +81,7 @@ function resetFunct(){
    console.log('pressed') 
     clearInterval(countdown);
    let display = `${'0'}:${'0'}${'0'}`
+   document.title = display;
    timeDisplay.textContent = display;
    
 }
